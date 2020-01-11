@@ -1,0 +1,18 @@
+version: "3"
+services:
+  privoxy:
+    build:
+      context: versions/alpine
+    command: ["privoxy", "--no-daemon", "/etc/privoxy/config"]
+    container_name: dc-privoxy
+    image: scrapedia/privoxy:latest
+    networks:
+      - nw-privoxy
+    ports:
+      - "8118:8118"
+    volumes:
+      - "./privoxy.config:/etc/privoxy/config"
+
+networks:
+  nw-privoxy:
+    driver: bridge
