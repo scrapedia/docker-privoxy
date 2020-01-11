@@ -12,3 +12,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build --tag scrapedia/privoxy:$(date +%s) --file Dockerfile .
+      working-directory: versions/alpine
