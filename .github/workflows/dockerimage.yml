@@ -14,7 +14,7 @@ jobs:
         run: docker build --tag scrapedia/privoxy:$(date +%s) --file Dockerfile .
         working-directory: versions/alpine
   
-  install shellcheck:
+  install_shellcheck:
     
     runs-on: ubuntu-latest
     
