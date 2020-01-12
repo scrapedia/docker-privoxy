@@ -2,7 +2,7 @@
 
 # Continuous integration (CI) and Continuous Delivery (CD)
 
-## Github Actions
+## [Github Actions](https://github.com/actions)
 
 ## [Shellcheck](https://github.com/koalaman/shellcheck)
 
