@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v1
       - name: Install the Docker image
         run: |
           scversion="stable"
