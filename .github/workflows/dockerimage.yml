@@ -13,3 +13,15 @@ jobs:
       - name: Build the Docker image
         run: docker build --tag scrapedia/privoxy:$(date +%s) --file Dockerfile .
         working-directory: versions/alpine
+  
+  install shellcheck:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Install the Docker image
+        run: |
+          scversion="stable" # or "v0.4.7", or "latest"
+          wget -qO- "https://storage.googleapis.com/shellcheck/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+          cp "shellcheck-${scversion}/shellcheck" /usr/bin/
+          shellcheck --version
