@@ -33,6 +33,8 @@ jobs:
 
   container-structure-test:
     
+    needs: build
+    
     runs-on: ubuntu-latest
     
     steps:
