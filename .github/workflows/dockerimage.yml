@@ -30,3 +30,15 @@ jobs:
       - name: Build the Docker image
         run: docker build --tag scrapedia/privoxy:$(date +%s) --file Dockerfile .
         working-directory: versions/alpine
+
+  container-structure-test:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Container structure test
+        run: |
+          curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
+          chmod +x container-structure-test-linux-amd64
+          sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+          container-structure-test --help
